@@ -1,6 +1,13 @@
 $(document).ready(function(){
-	$("infvis").mouseover(function(){
-			$("infvis").css("background-color", "yellow");
-	});
 
+	var iframe = $('#background-video')[0],
+	player = $f(iframe),
+	status = $('.status');
+
+	player.addEvent('ready', function() {
+	    player.api('setVolume', 0);
+	});
+	// $("#infvis").click(function(){
+	//
+	// });
 });
