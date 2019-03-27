@@ -24,7 +24,7 @@
 	margin-top:1em;
 }
 
-.background-video {
+.background{
    position: fixed;
    top: 0;
    left: 0;
@@ -34,7 +34,7 @@
    pointer-events: none;
    overflow: hidden;
 }
-.background-video iframe {
+.background iframe {
    width: 100vw;
    height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
    min-height: 100vh;
