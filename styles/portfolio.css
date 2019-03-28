@@ -69,7 +69,7 @@
 }
 
 .background{
-   position: fixed;
+   position: absolute;
    top: 0;
    left: 0;
    width: 100%;
@@ -83,8 +83,23 @@
    height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
    min-height: 100vh;
    min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
+    /* Create the parallax scrolling effect */
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+ .video-portfolio{
+  text-align: center;
+  margin-top: 55%;
+}
+
+#VideoTitle{
+  font-size:4em;
+  font-family: Futura;
+}
+
+#tagline{
+  color:grey;
 }
