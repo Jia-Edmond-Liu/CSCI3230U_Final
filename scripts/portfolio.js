@@ -58,32 +58,53 @@ $(document).ready(function(){
       window.location.href = "../FinalProject/main.html";
     });
 
-  var xhttp = new XMLHttpRequest(); //pull from JSON
-  xhttp.onreadystatechange = function(){
-    if ((xhttp.readyState == 4) && (xhttp.status)){
-
-      var data = xhttp.responseText;
-      var json = JSON.parse(data);
-      videoinfo = json['videos'];
-    }
-  }
-  xhttp.open("GET", 'https://api.myjson.com/bins/15lt9m', true);
-  xhttp.send();
-
-
+  // var xhttp = new XMLHttpRequest(); //pull from JSON
+  // xhttp.onreadystatechange = function(){
+  //   if ((xhttp.readyState == 4) && (xhttp.status)){
+  //
+  //     var data = xhttp.responseText;
+  //     var json = JSON.parse(data);
+  //     window.videoinfo = json['videos'];
+  //   }
+  // }
+  // xhttp.open("GET", 'https://api.myjson.com/bins/15lt9m', true);
+  // xhttp.send();
+  //
+  //
+  // function pullVideos(){
+  //   for (var i = 0; i < videoinfo.length; i++) {
+  //     var title = videoinfo[i]['title'];
+  //     var videolink = videoinfo[i]['video']
+  //     var tagline = videoinfo[i]['tagline']
+  //
+  //     var appendthis = '<br> <iframe width="1600" height="900" src="'+videolink+'" frameborder="0" allow="accelerometer;\
+  //     autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe> <h2 id="videTitle">'+title+'\
+  //     </h2> <h4 id="tagline">' + tagline+ '</h4>';
+  //
+  //     $(".jqueryvideos").append(appendthis);
+  //   }
+  // }
   function pullVideos(){
-    for (var i = 0; i < videoinfo.length; i++) {
-      var title = videoinfo[i]['title'];
-      var videolink = videoinfo[i]['video']
-      var tagline = videoinfo[i]['tagline']
+  	var url = "https://api.myjson.com/bins/15lt9m"
+      $.getJSON(url,function(data){
+    		var numofvideos = data.videos.length;
+    		var title = [];
+    		var videolink = [];
+    		var tagline = [];
+    		for(var i = 0; i < numofvideos ; i++){
+    			title[i] = data.videos[i].title;
+    			videolink[i] = data.videos[i].video;
+    			tagline[i] = data.videos[i].tagline;
 
-      var appendthis = '<br> <iframe width="1600" height="900" src="'+videolink+'" frameborder="0" allow="accelerometer;\
-      autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe> <h2 id="videTitle">'+title+'\
-      </h2> <h4 id="tagline">' + tagline+ '</h4>';
+          var appendthis = '<br> <iframe width="1600" height="900" src="'+videolink[i]+'" frameborder="0" allow="accelerometer;\
+          autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe> <h2 id="videTitle">'+title[i]+'\
+          </h2> <h4 id="tagline">' + tagline[i]+ '</h4>';
 
-      $(".jqueryvideos").append(appendthis);
-    }
+          $(".jqueryvideos").append(appendthis);
+    		}
+  	})
   }
+  pullVideos();
 
 
 });
