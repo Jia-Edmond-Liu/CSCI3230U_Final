@@ -4,14 +4,15 @@ $(document).ready(function(){
 
 			var player = new Vimeo.Player(video);
 
-	player.ready().then(function() {
+		player.ready().then(function() {
 		 player.setVolume(0);
 		});
 
 		$('#infvis').click(function () {
-    
-});
-	// $("#infvis").click(function(){
-	//
-	// });
+    window.location.href = "../FinalProject/main.html";
+		});
+
+		$('#about').click(function () {
+		window.location.href = "../FinalProject/about.html";
+		});
 });
