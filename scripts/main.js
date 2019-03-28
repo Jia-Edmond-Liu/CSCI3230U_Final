@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	
+
 	$("#infvis").hover(function(){
 		$("#infvis").css("cursor","pointer");
 	});
@@ -17,13 +17,17 @@ $(document).ready(function(){
 	});
 	var video = $('.background');
 
-			var player = new Vimeo.Player(video);
+	var player = new Vimeo.Player(video);
 
-		player.ready().then(function() {
-		 player.setVolume(0);
-		});
+	player.ready().then(function() {
+		player.setVolume(0);
+	});
 
-		$('#about').click(function () {
+	$('#about').click(function () {
 		window.location.href = "../FinalProject/about.html";
-		});
+	});
+
+	$("#contact").click(function(){
+		window.location.href = "../FinalProject/contact.html";
+	});
 });
