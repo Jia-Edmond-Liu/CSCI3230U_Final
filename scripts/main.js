@@ -7,6 +7,10 @@ $(document).ready(function(){
 	player.ready().then(function() {
 		 player.setVolume(0);
 		});
+
+		$('#infvis').click(function () {
+    
+});
 	// $("#infvis").click(function(){
 	//
 	// });
