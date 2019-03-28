@@ -1,5 +1,7 @@
 $.support.cors = true;
 
+var videoinfo;
+
 $(document).ready(function(){
 
 	$("#infvis").hover(function(){
@@ -40,6 +42,22 @@ $(document).ready(function(){
         'slow');
   });
 
+  var video = $('.background'); // background video volume off
+
+      var player = new Vimeo.Player(video);
+
+    player.ready().then(function() {
+     player.setVolume(0);
+    });
+
+    $('#about').click(function () {
+    window.location.href = "../FinalProject/about.html";
+    });
+
+    $("#infvis").click(function(){
+      window.location.href = "../FinalProject/main.html";
+    });
+
   var xhttp = new XMLHttpRequest(); //pull from JSON
   xhttp.onreadystatechange = function(){
     if ((xhttp.readyState == 4) && (xhttp.status)){
@@ -49,72 +67,38 @@ $(document).ready(function(){
       videoinfo = json['videos'];
     }
   }
-  xhttp.open("GET", '/videos.json', true);
+  xhttp.open("GET", 'https://api.myjson.com/bins/15lt9m', true);
   xhttp.send();
 
-  console.log('test')
-  function pullVideos(){
-    for (var i = 0; i < videoinfo.length; i++) {
-      var title = videoinfo[i]['title'];
-      var videolink = videoinfo[i]['video']
-      var tagline = videoinfo[i]['tagline']
-      console.log('test')
-      displayVideos(title, videolink, tagline);
-    }
+  for (var i = 0; i < videoinfo.length; i++) {
+    var title = videoinfo[i]['title'];
+    var videolink = videoinfo[i]['video']
+    var tagline = videoinfo[i]['tagline']
   }
 
-  function  displayVideos(title, videolink, tagline) {
-    var appendthis = '<br> <iframe width="1600" height="900" src="'+videolink+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe> <h2 id="heading">'+title+'\
-    </h2> <h4 id="tagline">' + tagline+ '</h4>';
+  var appendthis = '<br> <iframe width="1600" height="900" src="'+videolink+'" frameborder="0" allow="accelerometer;\
+  autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe> <h2 id="heading">'+title+'\
+  </h2> <h4 id="tagline">' + tagline+ '</h4>';
 
-    $(".jqueryvideos").append(appendthis);
-
-
-    // var video = document.createElement("IMG");
-    // var res = image.slice(0, 6);
-    // var imgname = "images/" + image.slice(7)
-    // console.log(imgname);
-    // //image1.setAttribute(res,imgname);
-    // image1.src = imgname;
-    // image1.setAttribute("width", "200");
-    // image1.setAttribute("height", "200");
-    // document.body.appendChild(image1);
-    //
-    // var hotelTitle = document.createElement("P");
-    // var hotelTitleName = document.createTextNode(name);
-    // hotelTitle.appendChild(hotelTitleName);
-    // document.body.appendChild(hotelTitle);
-    //
-    // var hotelPrice = document.createElement("P");
-    // var priceNum = document.createTextNode(price);
-    // hotelTitle.appendChild(priceNum);
-    // document.body.appendChild(hotelTitle);
-
-
-    //Connect CSS class
-    /*var att = document.createAttribute("class");
-    att.value = "democlass";
-    h1.setAttributeNode(att);*/
-  }
-
-
-
-	var video = $('.background'); // background video volume off
-
-			var player = new Vimeo.Player(video);
-
-		player.ready().then(function() {
-		 player.setVolume(0);
-		});
-
-		$('#about').click(function () {
-		window.location.href = "../FinalProject/about.html";
-		});
-
-    $("#infvis").click(function(){
-      console.log("hello");
-      window.location.href = "../FinalProject/main.html";
-    });
-
+  $(".jqueryvideos").append(appendthis);
 
 });
+//
+// function pullVideos(){
+//   console.log('test')
+//   for (var i = 0; i < videoinfo.length; i++) {
+//     var title = videoinfo[i]['title'];
+//     var videolink = videoinfo[i]['video']
+//     var tagline = videoinfo[i]['tagline']
+//
+//     displayVideos(title, videolink, tagline);
+//   }
+// }
+//
+// function  displayVideos(title, videolink, tagline) {
+//   var appendthis = '<br> <iframe width="1600" height="900" src="'+videolink+'" frameborder="0" allow="accelerometer;\
+//   autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe> <h2 id="heading">'+title+'\
+//   </h2> <h4 id="tagline">' + tagline+ '</h4>';
+//
+//   $(".jqueryvideos").append(appendthis);
+// }
