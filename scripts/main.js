@@ -8,10 +8,6 @@ $(document).ready(function(){
 		 player.setVolume(0);
 		});
 
-		$('#infvis').click(function () {
-    window.location.href = "../FinalProject/main.html";
-		});
-
 		$('#about').click(function () {
 		window.location.href = "../FinalProject/about.html";
 		});
