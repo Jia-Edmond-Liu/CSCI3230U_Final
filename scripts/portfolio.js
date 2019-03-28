@@ -70,17 +70,21 @@ $(document).ready(function(){
   xhttp.open("GET", 'https://api.myjson.com/bins/15lt9m', true);
   xhttp.send();
 
-  for (var i = 0; i < videoinfo.length; i++) {
-    var title = videoinfo[i]['title'];
-    var videolink = videoinfo[i]['video']
-    var tagline = videoinfo[i]['tagline']
+
+  function pullVideos(){
+    for (var i = 0; i < videoinfo.length; i++) {
+      var title = videoinfo[i]['title'];
+      var videolink = videoinfo[i]['video']
+      var tagline = videoinfo[i]['tagline']
+
+      var appendthis = '<br> <iframe width="1600" height="900" src="'+videolink+'" frameborder="0" allow="accelerometer;\
+      autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe> <h2 id="videTitle">'+title+'\
+      </h2> <h4 id="tagline">' + tagline+ '</h4>';
+
+      $(".jqueryvideos").append(appendthis);
+    }
   }
 
-  var appendthis = '<br> <iframe width="1600" height="900" src="'+videolink+'" frameborder="0" allow="accelerometer;\
-  autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe> <h2 id="heading">'+title+'\
-  </h2> <h4 id="tagline">' + tagline+ '</h4>';
-
-  $(".jqueryvideos").append(appendthis);
 
 });
 //
