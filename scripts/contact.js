@@ -16,10 +16,9 @@ $(document).ready(function(){
 		$("#shop").css("cursor","pointer");
 	});
 	$("#infvis").click(function(){
-		console.log("hello");
 		window.location.href = "../FinalProject/main.html";
 	});
-	$("#contact").click(function(){
-		window.location.href = "../FinalProject/contact.html";
+	$("#about").click(function(){
+		window.location.href = "../FinalProject/about.html";
 	});
 });
