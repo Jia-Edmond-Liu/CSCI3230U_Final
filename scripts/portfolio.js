@@ -16,11 +16,24 @@ $(document).ready(function(){
 		$("#shop").css("cursor","pointer");
 	});
 
-  $(".videoButton").hover(function(){
+  $(".videoButton").hover(function(){ //hover function changes animation on button
     $(".videoButton").css("background-color", 'White');
+    $(".videoButton").css("color", 'black');
+  },function(){
+    $(".videoButton").css("background-color", "Transparent");
+    $(".videoButton").css("color", 'white');
   });
 
-	var video = $('.background');
+  $(".photoButton").hover(function(){ //hover function changes animation on button
+    $(".photoButton").css("background-color", 'White');
+    $(".photoButton").css("color", 'black');
+  },function(){
+    $(".photoButton").css("background-color", "Transparent");
+    $(".photoButton").css("color", 'white');
+  });
+
+
+	var video = $('.background'); // background video volume off
 
 			var player = new Vimeo.Player(video);
 
