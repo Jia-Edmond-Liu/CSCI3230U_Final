@@ -29,13 +29,23 @@
 }
 
 .videoButton {
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border: 2px solid white;
-    cursor:pointer;
-    overflow: hidden;
-    color: white;
-    font-family: Futura;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: 2px solid white;
+  cursor:pointer;
+  overflow: hidden;
+  color: white;
+  font-family: Futura;
+  width: 200px;
+  height: 60px;
+  font-size: 1.5em;
+  position: absolute;
+	top:0;
+	bottom: 0;
+	left: 215px;
+	right: 0;
+
+	margin: auto;
 }
 
 .photoButton {
@@ -46,6 +56,16 @@
   overflow: hidden;
   color: white;
   font-family: Futura;
+  width: 200px;
+  height: 60px;
+  font-size: 1.5em;
+  position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 215px;
+
+	margin: auto;
 }
 
 .background{
