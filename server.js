@@ -32,6 +32,8 @@ app.use(session({
    secret: 'red october',
 }));
 
+var logged_in = false;
+
 var db = mongoose.connection;
 var Schema = mongoose.Schema;
 
@@ -84,9 +86,13 @@ app.get('/contact', function(request, response) {
 });
 
 app.get('/shop', function(request, response) {
-  response.render('shop', {
-    title: 'Shop',
-  });
+	if(logged_in){
+  		response.render('shop', {title: 'Shop',});
+	}
+	else{
+		response.render('login',{title: 'Login',
+			message: 'Please enter your login information'});
+	}
 });
 
 
@@ -109,16 +115,15 @@ app.post('/login',function(request,response){
 	else{
 		userDB.find({Username:username, Password:password}).then(function(results){
 		if(results.length > 0){
-			response.render('login',{
-				message: 'Welcome!'
+			response.render('shop',{
+				Title: 'Shop!'
 			});
-			console.log("log in");
+			logged_in = true;
 		}
 		else{
 			response.render('login',{
 				message: 'User does not exist! Please re-enter.'
 			});
-			console.log("failed");
 		}
 	});
 	}
@@ -175,9 +180,4 @@ app.post('/contact', function(request, response){
 	contact.save(function (err) {
 	  if (err) return Error(err);
 	});
-
-	//MongoDB testing
-	// contactDB.find({FirstName:fName}).then(function(){
-	// 	console.log("found");
-	// });
 });
