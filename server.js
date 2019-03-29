@@ -83,6 +83,12 @@ app.get('/contact', function(request, response) {
   });
 });
 
+app.get('/shop', function(request, response) {
+  response.render('shop', {
+    title: 'Shop',
+  });
+});
+
 
 app.get('/login', function(request, response) {
   response.render('login', {
@@ -123,9 +129,11 @@ app.post('/login',function(request,response){
 app.get('/register', function(request, response) {
   response.render('register', {
     title: 'Register',
-    message: 'Register for an account' //stopped working for some reason
+    message: 'Register for an account'
   });
 });
+
+
 
 app.post('/register', function(request,response){
 	var username = request.body.username;
