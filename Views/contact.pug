@@ -25,35 +25,38 @@ html
 				.col-lg-5
 					.form-group
 						label(for='fName:') First Name:
-						textarea.form-control(id = 'fName', rows='1')
+						input#fName.form-control(rows='1')
 				.col-lg-5
 					.form-group
 						label(for='lName:') Last Name:
-						textarea.form-control(id = 'lName', rows='1')
+						input#lName.form-control(rows='1')
 				.col-lg-1
 			.row
 				.col-lg-1
 				.col-lg-10
 					label(for='Email:') Email:
-					textarea.form-control(id = 'Email', rows='1')
+					input#Email.form-control(rows='1')
 				.col-lg-1
 			.row
 				.col-lg-1
 				.col-lg-10
 					label(for='Phone:') Phone Number:
-					textarea.form-control(id = 'Phone', rows='1')
+					input#Phone.form-control(rows='1')
 				.col-lg-1
 			.row
 				.col-lg-1
 				.col-lg-10
 					label(for='Subject:') Subject:
-					textarea.form-control(id = 'Subject', rows='1')
+					input#Subject.form-control(rows='1')
 				.col-lg-1
 			.row
 				.col-lg-1
 				.col-lg-10
 					label(for='Message:') Message:
-					textarea.form-control(id = 'Message', rows='4')
+					input#Message.form-control(rows='4')
 				.col-lg-1
-			div
-				button.btn.btn-outline-dark(type='submit') Submit
+			.row
+				.col-lg-5
+				.col-lg-2
+					button.btn.btn-outline-dark(type='submit') Submit
+				.col-lg-5
