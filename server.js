@@ -180,4 +180,9 @@ app.post('/contact', function(request, response){
 	contact.save(function (err) {
 	  if (err) return Error(err);
 	});
+
+	response.render('contact',{
+		title:'Contact',
+		message: "Your Form has been sent!"
+	});
 });
