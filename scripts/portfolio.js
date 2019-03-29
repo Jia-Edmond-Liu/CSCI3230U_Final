@@ -89,7 +89,7 @@ $(document).ready(function(){
     			tagline[i] = data.videos[i].tagline;
 
           var appendthis = '<br> <iframe width="1600" height="900" src="'+videolink[i]+'" frameborder="0" allow="accelerometer;\
-          autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe> <h2 id="videTitle">'+title[i]+'\
+          autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe> <h2 id="videoname">'+title[i]+'\
           </h2> <h4 id="tagline">' + tagline[i]+ '</h4>';
 
           $(".jqueryvideos").append(appendthis);
