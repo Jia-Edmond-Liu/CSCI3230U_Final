@@ -24,22 +24,20 @@ html
 					#contact.col-lg-1 Contact
 				a.link(href='/shop')
 					#shop.col-lg-1 Shop
-		form(action='/login', method='post')
+		form.mainform(action='/login', method='post')
 			.row
-				.col-lg-1
-				.col-lg-3
-					.form-group
+				.col-lg-4
+				.col-lg-4
+					.form-user
 						label(for='username:') Username:
 						textarea#username.form-control(name='username', rows='1')
-				.col-lg-1
 			.row
-				.col-lg-1
-				.col-lg-3
-					label(for='Password:') Password:
-					textarea#Password.form-control(name='Password', rows='1')
-				.col-lg-1
+				.col-lg-4
+				.col-lg-4
+					.form-password
+						label(for='Password:') Password:
+						textarea#Password.form-control(name='Password', rows='1')
 			.row
-				.col-lg-5
-				.col-lg-2
+				.col-lg-4
+				.col-lg-4
 					button.btn.btn-outline-dark(type='Login') Login
-				.col-lg-5
