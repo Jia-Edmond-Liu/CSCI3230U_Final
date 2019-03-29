@@ -56,3 +56,10 @@
   text-align: center;
   margin-top: 10px;
 }
+
+.btn{
+	background-color: black;
+	color:white;
+	outline-color: grey;
+	margin-top:3rem;
+}
