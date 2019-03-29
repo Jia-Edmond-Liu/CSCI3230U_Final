@@ -12,38 +12,51 @@
 
 #header #bar #infvis{
 	font-size: 30px;
+  color:white;
 }
 
 #header #bar #about{
 	margin-top:1em;
+  color:white;
 }
 
 #header #bar #portfolio{
 	margin-top:1em;
+  color:white;
 }
 
 #header #bar #contact{
 	margin-top:1em;
+  color:white;
 }
 
 #header #bar #shop{
 	margin-top:1em;
+  color:white;
 }
 
 /* Create four equal columns that sits next to each other */
-.column {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
+
+.img{
+  width: 400%;
+  height: 600px;
 }
 
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-}
-
-.image{
-  width:100%;
+#image{
+  width:auto;
   height:auto;
+}
+
+#column{
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+.headline{
+  color:black;
+  font-size:15px;
+  font-family:"Futura";
+  text-align: center;
+  margin-top: 10px;
 }
