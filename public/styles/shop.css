@@ -42,3 +42,8 @@
   margin-top: 8px;
   vertical-align: middle;
 }
+
+.image{
+  width:100%;
+  height:auto;
+}
