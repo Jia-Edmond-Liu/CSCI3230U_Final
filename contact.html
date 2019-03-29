@@ -22,19 +22,20 @@
 			<div class="col-lg-1" id = "shop">Shop</div>
 		</div>
 	</div>
-	<form>
+	<body>
+	<form action = "/contact" method = "post">
 		<div class="row">
 			<div class = "col-lg-1"></div>
 			<div class = "col-lg-5">
 				<div class="form-group">
   					<label for="fName:">First Name:</label>
-  					<textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+  					<textarea class="form-control" id="fName" rows="1"></textarea>
 				</div>
 			</div>
 			<div class = "col-lg-5">
 				<div class="form-group">
   					<label for="lName:">Last Name:</label>
-  					<textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+  					<textarea class="form-control" id="lName" rows="1"></textarea>
 				</div>
 			</div>
 			<div class = "col-lg-1"></div>
@@ -43,7 +44,7 @@
 			<div class = "col-lg-1"></div>
 			<div class = "col-lg-10">
 				<label for="Email:">Email:</label>
-				<textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+				<textarea class="form-control" id="email" rows="1"></textarea>
 			</div>
 			<div class = "col-lg-1"></div>
 		</div>
@@ -51,7 +52,7 @@
 			<div class = "col-lg-1"></div>
 			<div class = "col-lg-10">
 				<label for="Phone:">Phone Number:</label>
-				<textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+				<textarea class="form-control" id="phone" rows="1"></textarea>
 			</div>
 			<div class = "col-lg-1"></div>
 		</div>
@@ -59,7 +60,7 @@
 			<div class = "col-lg-1"></div>
 			<div class = "col-lg-10">
 				<label for="Subject:">Subject:</label>
-				<textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+				<textarea class="form-control" id="subject" rows="1"></textarea>
 			</div>
 			<div class = "col-lg-1"></div>
 		</div>
@@ -67,13 +68,14 @@
 			<div class = "col-lg-1"></div>
 			<div class = "col-lg-10">
 				<label for="Message:">Message:</label>
-				<textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+				<textarea class="form-control" id="message" rows="4"></textarea>
 			</div>
 			<div class = "col-lg-1"></div>
 		</div>
 		<div>
-			<button type="button" class="btn btn-outline-dark">Submit</button>
+			<button type="submit" class="btn btn-outline-dark">Submit</button>
 		</div>
 
 	</form>
+	</body>
 </html>
