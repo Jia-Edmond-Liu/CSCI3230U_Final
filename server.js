@@ -53,6 +53,12 @@ app.listen(app.get('port'), function() {
   console.log('Server running on port ' + app.get('port'));
 });
 
+app.get('/', function(request, response) {
+  response.render('main', {
+    title: 'main'
+  });
+});
+
 app.get('/about', function(request, response) {
   response.render('about', {
     title: 'About'
@@ -68,6 +74,12 @@ app.get('/portfolio', function(request, response) {
 app.get('/contact', function(request, response) {
   response.render('contact', {
     title: 'Contact'
+  });
+});
+
+app.get('/shop', function(request, response) {
+  response.render('shop', {
+    title: 'shop'
   });
 });
 
@@ -93,12 +105,4 @@ app.post('/contact', function(request, response){
 
 	console.log(request.body);
 	console.log(fName,lName,email,phone,subject,message);
-});
-
-app.get('/infvis', function(request, response) {
-  response.render('infvis', {
-    title: 'InfiniteVision'
-  });
-
-
 });
