@@ -34,10 +34,12 @@
 form{
 	font-family:"Futura";
 	background-color: white;
+
 }
 
 .form-group{
 	color:black;
+
 }
 
 form .row{
@@ -55,4 +57,8 @@ form .row{
 .link
 {
 color: White;
+}
+
+textarea {
+  resize: none;
 }
