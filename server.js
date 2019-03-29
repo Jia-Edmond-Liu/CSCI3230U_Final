@@ -144,25 +144,33 @@ app.post('/register', function(request,response){
 	var username = request.body.username;
 	var password = request.body.password;
 
-
 	if(username == '' || password == ''){
 		response.render('register',{
 			message: 'One of the fields is blank. Try again!'
-		});
+		})
 	}
 	else{
-		var user = new userDB({Username: username, Password: password});
-		user.save(function(err){
-			if (err) return Error(err);
-		});
+		userDB.find({Username:username}).then(function(results){
+			if(results.length>0){
+				response.render('register',{
+					title:'Login',
+					message: 'User already exists!'
+				});
+			}
+			else{
+				var user = new userDB({Username: username, Password: password});
+				user.save(function(err){
+					if (err) return Error(err);
+				});
 
-		response.render('login',{
-			title:'Login',
-			message: 'Please enter your login information'
+				response.render('login',{
+					title:'Login',
+					message: 'Please enter your login information'
+				});
+			}
 		});
 	}
-
-})
+});
 
 
 
