@@ -53,12 +53,6 @@ app.listen(app.get('port'), function() {
   console.log('Server running on port ' + app.get('port'));
 });
 
-app.get('/', function(request, response) {
-  response.render('main', {
-    title: 'main'
-  });
-});
-
 app.get('/about', function(request, response) {
   response.render('about', {
     title: 'About'
@@ -85,10 +79,18 @@ app.post('/contact', function(request, response){
 	var subject = request.body.Subject;
 	var message = request.body.Message;
 
-	// var contact = new ContactDB({FirstName:fName, LastName: lName, Email: email,
-	// 	Phone: phone, Subject: subject, Message: message});
-	//
-	// db.collection('contactSchema').insert(contact);
+	var contact = new contactDB({FirstName:fName, LastName: lName, Email: email,
+		Phone: phone, Subject: subject, Message: message});
+
+	contact.save(function (err) {
+	  if (err) return handleError(err);
+	});
+
+	//MongoDB testing
+	// contactDB.find({FirstName:fName}).then(function(){
+	// 	console.log("found");
+	// });
+
 	console.log(request.body);
 	console.log(fName,lName,email,phone,subject,message);
 });
