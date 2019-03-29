@@ -30,6 +30,14 @@
 	margin-top:1em;
 }
 
+body #message{
+	margin-right:auto;
+	margin-left:auto;
+	width:50%;
+	text-align: center;
+	margin-top:3rem;
+	margin-bottom:5rem;
+}
 
 form{
 	font-family:"Futura";

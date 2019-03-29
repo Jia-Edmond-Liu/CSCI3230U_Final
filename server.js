@@ -44,7 +44,13 @@ var contactSchema = new Schema({
 	Message: String
 }, {collection: 'contacts'});
 
+var userSchema = new Schema({
+	Username:{type: String, unique: true},
+	Password: String
+}, {collection: 'users'});
+
 var contactDB = mongoose.model('contacts',contactSchema);
+var userDB = mongoose.model('users', userSchema);
 
 
 //runs server on port 3000
@@ -77,11 +83,41 @@ app.get('/contact', function(request, response) {
   });
 });
 
+//Login isnt created yet so shop is placeholder
 app.get('/shop', function(request, response) {
   response.render('shop', {
-    title: 'shop'
+    title: 'shop',
+	message: 'Please enter your login information'
   });
 });
+
+
+app.post('/shop',function(request,response){
+	var username = request.body.username;
+	var password = request.body.password;
+
+	//creating a temp user and adding it to the db to test
+	var user = new userDB({Username: 'a', Password: 'a'});
+	user.save(function(err){
+		if (err) return Error(err);
+	});
+	userDB.find({Username:username, Password:password}).then(function(results){
+		if(results.length > 0){
+
+			response.render('shop',{
+				message: 'Welcome)'
+			});
+		}
+		else{
+			response.render('shop',{
+				message: 'User does not exist! Please re-enter.'
+			});
+		}
+	});
+
+});
+
+
 
 app.post('/contact', function(request, response){
 	var fName = request.body.fName;
@@ -95,14 +131,11 @@ app.post('/contact', function(request, response){
 		Phone: phone, Subject: subject, Message: message});
 
 	contact.save(function (err) {
-	  if (err) return handleError(err);
+	  if (err) return Error(err);
 	});
 
 	//MongoDB testing
 	// contactDB.find({FirstName:fName}).then(function(){
 	// 	console.log("found");
 	// });
-
-	console.log(request.body);
-	console.log(fName,lName,email,phone,subject,message);
 });

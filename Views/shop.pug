@@ -24,7 +24,8 @@ html
 					#contact.col-lg-1 Contact
 				a.link(href='/shop')
 					#shop.col-lg-1 Shop
-		form.mainform(action='/login', method='post')
+		form.mainform(action='/shop', method='post')
+			div(id = 'message' class='content')= message
 			.row
 				.col-lg-4
 				.col-lg-4
@@ -35,8 +36,8 @@ html
 				.col-lg-4
 				.col-lg-4
 					.form-password
-						label(for='Password:') Password:
-						textarea#Password.form-control(name='Password', rows='1')
+						label(for='password:') Password:
+						textarea#password.form-control(name='password', rows='1')
 			.row
 				.col-lg-4
 				.col-lg-4
