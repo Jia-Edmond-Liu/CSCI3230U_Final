@@ -83,16 +83,22 @@ app.get('/contact', function(request, response) {
   });
 });
 
-//Login isnt created yet so shop is placeholder
-app.get('/shop', function(request, response) {
-  response.render('shop', {
-    title: 'shop',
-	message: 'Please enter your login information'
+//Login isnt created yet so login is placeholder
+app.get('/login', function(request, response) {
+  response.render('login', {
+    title: 'login',
+	message: 'Please enter your login information' //stopped working for some reason
   });
 });
 
+app.get('/register', function(request, response) {
+  response.render('register', {
+    title: 'Register',
+    message: 'Register for an account' //stopped working for some reason
+  });
+});
 
-app.post('/shop',function(request,response){
+app.post('/login',function(request,response){
 	var username = request.body.username;
 	var password = request.body.password;
 
@@ -104,12 +110,12 @@ app.post('/shop',function(request,response){
 	userDB.find({Username:username, Password:password}).then(function(results){
 		if(results.length > 0){
 
-			response.render('shop',{
+			response.render('login',{
 				message: 'Welcome)'
 			});
 		}
 		else{
-			response.render('shop',{
+			response.render('login',{
 				message: 'User does not exist! Please re-enter.'
 			});
 		}

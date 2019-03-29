@@ -75,7 +75,13 @@ form .row{
 
 .link
 {
-color: White;
+  color: White;
+}
+
+.linkreg
+{
+  color: Black;
+  margin-left: 43px;
 }
 
 textarea {
