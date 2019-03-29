@@ -122,7 +122,7 @@ app.post('/login',function(request,response){
 		}
 		else{
 			response.render('login',{
-				message: 'User does not exist! Please re-enter.'
+				message: 'User does not exist or incorrect info! Please re-enter.'
 			});
 		}
 	});
@@ -179,5 +179,10 @@ app.post('/contact', function(request, response){
 
 	contact.save(function (err) {
 	  if (err) return Error(err);
+	});
+
+	response.render('contact',{
+		title:'Contact',
+		message: "Your Form has been sent!"
 	});
 });

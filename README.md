@@ -18,8 +18,8 @@ Run the following commands in terminal:
 
 4.npm install express
 
-6.mongod
+5.mongod
 
-7.node server.js (in a second terminal)
+6.node server.js (in a second terminal)
 
 Then navigate to localhost:3000
