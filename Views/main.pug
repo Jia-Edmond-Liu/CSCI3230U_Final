@@ -13,11 +13,16 @@ html
 	body
 		#header
 			#bar.row
-				#infvis.col-lg-3 INFINITE VISION
+				a.link(href='/')
+					#infvis.col-lg-3 INFINITE VISION
 				.col-lg-5
-				#about.col-lg-1 About
-				#portfolio.col-lg-1 Portolio
-				#contact.col-lg-1 Contact
-				#shop.col-lg-1 Shop
+				a.link(href='/about')
+					#about.col-lg-1 About
+				a.link(href='/portfolio')
+					#portfolio.col-lg-1 Portfolio
+				a.link(href='/contact')
+					#contact.col-lg-1 Contact
+				a.link(href='/shop')
+					#shop.col-lg-1 Shop
 		#background-video.background
 			iframe(src='https://player.vimeo.com/video/277390713?background=1&autoplay=1&color=ff0179&title=0&byline=0&portrait=0&loop=1&sidedock=0', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='', controls='0')

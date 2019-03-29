@@ -53,6 +53,12 @@ app.listen(app.get('port'), function() {
   console.log('Server running on port ' + app.get('port'));
 });
 
+app.get('/', function(request, response) {
+  response.render('main', {
+    title: 'main'
+  });
+});
+
 app.get('/about', function(request, response) {
   response.render('about', {
     title: 'About'

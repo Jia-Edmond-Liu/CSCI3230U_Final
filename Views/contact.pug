@@ -13,47 +13,52 @@ html
 	body
 		#header
 			#bar.row
-				#infvis.col-lg-3 INFINITE VISION
+				a.link(href='/')
+					#infvis.col-lg-3 INFINITE VISION
 				.col-lg-5
-				#about.col-lg-1 About
-				#portfolio.col-lg-1 Portolio
-				#contact.col-lg-1 Contact
-				#shop.col-lg-1 Shop
+				a.link(href='/about')
+					#about.col-lg-1 About
+				a.link(href='/portfolio')
+					#portfolio.col-lg-1 Portfolio
+				a.link(href='/contact')
+					#contact.col-lg-1 Contact
+				a.link(href='/shop')
+					#shop.col-lg-1 Shop
 		form(action='/contact', method='post')
 			.row
 				.col-lg-1
 				.col-lg-5
 					.form-group
 						label(for='fName:') First Name:
-						textarea.form-control(id='fName',name='fName', rows='1')
+						input#fName.form-control(rows='1')
 				.col-lg-5
 					.form-group
 						label(for='lName:') Last Name:
-						textarea.form-control(id='lName',name='lName', rows='1')
+						input#lName.form-control(rows='1')
 				.col-lg-1
 			.row
 				.col-lg-1
 				.col-lg-10
 					label(for='Email:') Email:
-					textarea.form-control(id='Email',name='Email', rows='1')
+					input#Email.form-control(rows='1')
 				.col-lg-1
 			.row
 				.col-lg-1
 				.col-lg-10
 					label(for='Phone:') Phone Number:
-					textarea.form-control(id='Phone',name='Phone', rows='1')
+					input#Phone.form-control(rows='1')
 				.col-lg-1
 			.row
 				.col-lg-1
 				.col-lg-10
 					label(for='Subject:') Subject:
-					textarea.form-control(id='Subject',name='Subject', rows='1')
+					input#Subject.form-control(rows='1')
 				.col-lg-1
 			.row
 				.col-lg-1
 				.col-lg-10
 					label(for='Message:') Message:
-					textarea.form-control(id='Message', name='Message',rows='4')
+					input#Message.form-control(rows='4')
 				.col-lg-1
 			.row
 				.col-lg-5
