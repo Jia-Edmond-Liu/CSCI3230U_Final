@@ -1,0 +1,44 @@
+#header{
+	color:white;
+	font-size:15px;
+	font-family:"Futura";
+	background-color: black;
+}
+
+
+#header #bar{
+	padding:2rem;
+}
+
+#header #bar #infvis{
+	font-size: 30px;
+}
+
+#header #bar #about{
+	margin-top:1em;
+}
+
+#header #bar #portfolio{
+	margin-top:1em;
+}
+
+#header #bar #contact{
+	margin-top:1em;
+}
+
+#header #bar #shop{
+	margin-top:1em;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
