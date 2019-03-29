@@ -43,6 +43,11 @@
   height: 600px;
 }
 
+.logoutbtn{
+  margin-left: 800px;
+  margin-top:0px;
+}
+
 #column{
   float: left;
   width: 25%;
