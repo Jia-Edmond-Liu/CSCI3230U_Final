@@ -83,12 +83,41 @@ app.get('/contact', function(request, response) {
   });
 });
 
-//Login isnt created yet so login is placeholder
+
 app.get('/login', function(request, response) {
   response.render('login', {
     title: 'login',
-	message: 'Please enter your login information' //stopped working for some reason
+	message: 'Please enter your login information'
   });
+});
+
+app.post('/login',function(request,response){
+	var username = request.body.username;
+	var password = request.body.password;
+
+	if(username == '' || password == ''){
+		response.render('login',{
+			message: 'One of the fields is blank. Try again!'
+		});
+	}
+	else{
+		userDB.find({Username:username, Password:password}).then(function(results){
+		if(results.length > 0){
+			response.render('login',{
+				message: 'Welcome!'
+			});
+			console.log("log in");
+		}
+		else{
+			response.render('login',{
+				message: 'User does not exist! Please re-enter.'
+			});
+			console.log("failed");
+		}
+	});
+	}
+
+
 });
 
 app.get('/register', function(request, response) {
@@ -98,30 +127,29 @@ app.get('/register', function(request, response) {
   });
 });
 
-app.post('/login',function(request,response){
+app.post('/register', function(request,response){
 	var username = request.body.username;
 	var password = request.body.password;
 
-	//creating a temp user and adding it to the db to test
-	var user = new userDB({Username: 'a', Password: 'a'});
-	user.save(function(err){
-		if (err) return Error(err);
-	});
-	userDB.find({Username:username, Password:password}).then(function(results){
-		if(results.length > 0){
 
-			response.render('login',{
-				message: 'Welcome)'
-			});
-		}
-		else{
-			response.render('login',{
-				message: 'User does not exist! Please re-enter.'
-			});
-		}
-	});
+	if(username == '' || password == ''){
+		response.render('register',{
+			message: 'One of the fields is blank. Try again!'
+		});
+	}
+	else{
+		var user = new userDB({Username: username, Password: password});
+		user.save(function(err){
+			if (err) return Error(err);
+		});
 
-});
+		response.render('login',{
+			title:'Login',
+			message: 'Please enter your login information'
+		});
+	}
+
+})
 
 
 

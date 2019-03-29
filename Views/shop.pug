@@ -8,8 +8,8 @@ html
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
 		script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
 		script(src='https://player.vimeo.com/api/player.js')
-		link(type='text/css', rel='stylesheet', href='styles/login.css')
-		script(type='text/javascript', src='scripts/login.js')
+		link(type='text/css', rel='stylesheet', href='styles/shop.css')
+		script(type='text/javascript', src='scripts/shop.js')
 	body
 		#header
 			#bar.row
@@ -24,21 +24,21 @@ html
 					#contact.col-lg-1 Contact
 				a.link(href='/shop')
 					#shop.col-lg-1 Shop
-		form.mainform(action='/register', method='post')
+		form.mainform(action='/login', method='post')
 			div(id = 'message' class='content')= message
 			.row
 				.col-lg-4
 				.col-lg-4
 					.form-user
-						label(for='username:') Please create a Username:
+						label(for='username:') Username:
 						textarea#username.form-control(name='username', rows='1')
 			.row
 				.col-lg-4
 				.col-lg-4
 					.form-password
-						label(for='password:') Please create a Password:
+						label(for='password:') Password:
 						textarea#password.form-control(name='password', rows='1')
 			.row
 				.col-lg-4
 				.col-lg-4
-					button.btn.btn-outline-dark(type='Register') Register
+					button.btn.btn-outline-dark(type='Login') Login
