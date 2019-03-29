@@ -7,14 +7,30 @@ var bcrypt = require('bcrypt-nodejs');
 var bodyParser = require('body-parser');
 var uuid = require('uuid/v1');
 
-mongoose.connect('mongodb://localhost:27017/db');
 
+mongoose.connect('mongodb://localhost:27017/db');
+mongoose.Promise = global.Promise;
+
+mongoose.set('useCreateIndex', true);
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(bodyParser.json({ type: '*' }));
 
 app.engine('pug', require('pug').__express)
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
+
+app.set('trust-proxy', true);
+app.use(session({
+   genid: function(request) {
+      return uuid();
+   },
+   resave: false,
+   saveUninitialized: false,
+   //cookie: {secure: true},
+   secret: 'red october',
+}));
 
 var db = mongoose.connection;
 var Schema = mongoose.Schema;
@@ -30,20 +46,6 @@ var contactSchema = new Schema({
 
 var contactDB = mongoose.model('contacts',contactSchema);
 
-
-
-app.set('trust-proxy', true);
-app.use(session({
-   genid: function(request) {
-      return uuid();
-   },
-   resave: false,
-   saveUninitialized: false,
-   //cookie: {secure: true},
-   secret: 'red october',
-}));
-app.use(bodyParser.json({ type: '*' }));
-app.use(bodyParser.urlencoded({ extended: true }));
 
 //runs server on port 3000
 app.set('port', process.env.PORT || 3000);
@@ -81,7 +83,6 @@ app.post('/contact', function(request, response){
 	// 	Phone: phone, Subject: subject, Message: message});
 	//
 	// db.collection('contactSchema').insert(contact);
-	console.log(request);
 	console.log(request.body);
 	console.log(fName,lName,email,phone,subject,message);
 });

@@ -19,41 +19,41 @@ html
 				#portfolio.col-lg-1 Portolio
 				#contact.col-lg-1 Contact
 				#shop.col-lg-1 Shop
-		form(method='post')
+		form(action='/contact', method='post')
 			.row
 				.col-lg-1
 				.col-lg-5
 					.form-group
 						label(for='fName:') First Name:
-						textarea#fName.form-control(rows='1')
+						textarea.form-control(id = 'fName', rows='1')
 				.col-lg-5
 					.form-group
 						label(for='lName:') Last Name:
-						textarea#lName.form-control(rows='1')
+						textarea.form-control(id = 'lName', rows='1')
 				.col-lg-1
 			.row
 				.col-lg-1
 				.col-lg-10
 					label(for='Email:') Email:
-					textarea#email.form-control(rows='1')
+					textarea.form-control(id = 'Email', rows='1')
 				.col-lg-1
 			.row
 				.col-lg-1
 				.col-lg-10
 					label(for='Phone:') Phone Number:
-					textarea#phone.form-control(rows='1')
+					textarea.form-control(id = 'Phone', rows='1')
 				.col-lg-1
 			.row
 				.col-lg-1
 				.col-lg-10
 					label(for='Subject:') Subject:
-					textarea#subject.form-control(rows='1')
+					textarea.form-control(id = 'Subject', rows='1')
 				.col-lg-1
 			.row
 				.col-lg-1
 				.col-lg-10
 					label(for='Message:') Message:
-					textarea#message.form-control(rows='4')
+					textarea.form-control(id = 'Message', rows='4')
 				.col-lg-1
 			div
 				button.btn.btn-outline-dark(type='submit') Submit
