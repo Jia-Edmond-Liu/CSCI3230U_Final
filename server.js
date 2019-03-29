@@ -122,7 +122,7 @@ app.post('/login',function(request,response){
 		}
 		else{
 			response.render('login',{
-				message: 'User does not exist! Please re-enter.'
+				message: 'User does not exist or incorrect info! Please re-enter.'
 			});
 		}
 	});
