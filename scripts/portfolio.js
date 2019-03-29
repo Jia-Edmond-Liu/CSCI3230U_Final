@@ -50,14 +50,6 @@ $(document).ready(function(){
      player.setVolume(0);
     });
 
-    $('#about').click(function () {
-    window.location.href = "../FinalProject/about.html";
-    });
-
-    $("#infvis").click(function(){
-      window.location.href = "../FinalProject/main.html";
-    });
-
   // var xhttp = new XMLHttpRequest(); //pull from JSON
   // xhttp.onreadystatechange = function(){
   //   if ((xhttp.readyState == 4) && (xhttp.status)){
