@@ -23,7 +23,7 @@ $(document).ready(function(){
 		player.setVolume(0);
 	});
 
-	$('#about').click(function () {
+	$('#about').click(function () { 
 		window.location.href = "../FinalProject/about.html";
 	});
 
