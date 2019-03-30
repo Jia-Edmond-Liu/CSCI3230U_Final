@@ -183,6 +183,27 @@ app.post('/register', function(request,response){ //register functionality
 	}
 });
 
+app.get('/buy',function(request,response){
+	response.render('shop',{
+	});
+});
+
+app.post('/buy',function(request,response){
+	response.render('shop',{
+		message:'Thank you for your purchase!'
+	});
+});
+
+app.get('/buy2',function(request,response){
+	response.render('shop',{
+	});
+});
+
+app.post('/buy2',function(request,response){
+	response.render('shop',{
+		message:'Thank you for your purchase!'
+	});
+});
 
 
 app.post('/contact', function(request, response){

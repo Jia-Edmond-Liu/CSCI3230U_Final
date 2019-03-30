@@ -75,3 +75,15 @@ form #logout{
 	right:6rem;
 
 }
+
+#message{
+	margin-right:auto;
+	margin-left:auto;
+	width:50%;
+	text-align: center;
+	margin-top:3rem;
+	margin-bottom:5rem;
+	font-family: "Futura";
+	font-size:15;
+	font-style:bold;
+}

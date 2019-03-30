@@ -44,7 +44,8 @@ html
 					option(value='large') large
 				br
 				br
-				button.btn(type='Buy!') Buy!
+				form(action='buy',method='post')
+					button.btn(type='Buy!') Buy!
 			#column.col-lg-3
 				img.img(src='/imgs/Justin_Timberlake/IMG_1564.jpg')
 			#column.col-lg-3
@@ -60,8 +61,10 @@ html
 					option(value='small') small
 					option(value='medium') medium
 					option(value='large') large
+				form(action='buy2',method='post')
+						button.btn(type='Buy!') Buy!
 				br
 				br
-				button.btn(type='Buy!') Buy!
 		form(action='logout',method='post')
 			button.btn.btn-outline-dark(href = 'login',id = 'logout', type='submit') Logout
+		div(id = 'message' class='content')= message
