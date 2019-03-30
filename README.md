@@ -23,3 +23,6 @@ Run the following commands in terminal:
 6.node server.js (in a second terminal)
 
 Then navigate to localhost:3000
+
+
+Coding was done together so not all commits reflect work done

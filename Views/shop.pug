@@ -26,7 +26,6 @@ html
 					#shop.col-lg-1 Shop
 		.headline
 			| This is the shop page, here you can purchase prints of our original pictures! (All shot by Tehseen Chaudhry)
-			button.btn.logoutbtn(type='Logout') Logout
 		.row
 			#column.col-lg-3
 				img.img(src='/imgs/Jessie_Reyez/DSC02154.jpg')
@@ -64,3 +63,5 @@ html
 				br
 				br
 				button.btn(type='Buy!') Buy!
+		form(action='logout',method='post')
+			button.btn.btn-outline-dark(href = 'login',id = 'logout', type='submit') Logout

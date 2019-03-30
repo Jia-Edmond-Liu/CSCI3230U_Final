@@ -15,7 +15,7 @@ $(document).ready(function(){
 	$("#shop").hover(function(){
 		$("#shop").css("cursor","pointer");
 	});
-	$("#infvis").click(function(){
+	$("#infvis").click(function(){ //redirect on click
 		window.location.href = "../FinalProject/main.html";
 	});
 	$("#about").click(function(){

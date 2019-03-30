@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	//Changes the page back to main
-	$("#infvis").hover(function(){
+	$("#infvis").hover(function(){ //allows for hover and changes cursor
 		$("#infvis").css("cursor","pointer");
 	});
 	$("#about").hover(function(){

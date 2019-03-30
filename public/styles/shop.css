@@ -68,3 +68,10 @@
 	outline-color: grey;
 	margin-top:3rem;
 }
+
+form #logout{
+	position:fixed;
+	top:6rem;
+	right:6rem;
+
+}

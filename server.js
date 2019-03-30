@@ -61,77 +61,88 @@ app.listen(app.get('port'), function() {
   console.log('Server running on port ' + app.get('port'));
 });
 
-app.get('/', function(request, response) {
+app.get('/', function(request, response) { //main page
   response.render('main', {
     title: 'main'
   });
 });
 
-app.get('/about', function(request, response) {
+app.get('/about', function(request, response) { //about page
   response.render('about', {
     title: 'About'
   });
 });
 
-app.get('/portfolio', function(request, response) {
+app.get('/portfolio', function(request, response) { //portfolio page
   response.render('portfolio', {
     title: 'Portfolio'
   });
 });
 
-app.get('/contact', function(request, response) {
+app.get('/contact', function(request, response) { //contact page
   response.render('contact', {
     title: 'Contact'
   });
 });
 
-app.get('/shop', function(request, response) {
+app.get('/shop', function(request, response) { //shop page
 	if(logged_in){
-  		response.render('shop', {title: 'Shop',});
+  		response.render('shop', {title: 'Shop',}); //if logged in return shop page
 	}
 	else{
 		response.render('login',{title: 'Login',
-			message: 'Please enter your login information'});
+			message: 'Please enter your login information'}); //return this message if not logged in
 	}
 });
 
+app.get('/logout',function(request, response){
+	response.render('shop',{
+		title: 'Shop',
+	});
+});
 
-app.get('/login', function(request, response) {
+app.post('/logout',function(request,response){
+	logged_in = false;
+	response.render('main',{
+		title:'Home',
+	});
+});
+
+app.get('/login', function(request, response) { //login page
   response.render('login', {
     title: 'login',
 	message: 'Please enter your login information'
   });
 });
 
-app.post('/login',function(request,response){
+app.post('/login',function(request,response){ //login page functionality
 	var username = request.body.username;
 	var password = request.body.password;
 
-	if(username == '' || password == ''){
+	if(username == '' || password == ''){ //blank case handling
 		response.render('login',{
-			message: 'One of the fields is blank. Try again!'
+			message: 'One of the fields is blank. Try again!' //return this message
 		});
 	}
 	else{
-		userDB.find({Username:username, Password:password}).then(function(results){
+		userDB.find({Username:username, Password:password}).then(function(results){ //using database to check for password and username
 		if(results.length > 0){
 			response.render('shop',{
 				Title: 'Shop!'
 			});
-			logged_in = true;
+			logged_in = true; //set logged_in to true, allowing for shop usage
 		}
-		else{
+		else{ //if no match in database return error
 			response.render('login',{
 				message: 'User does not exist or incorrect info! Please re-enter.'
 			});
 		}
 	});
 	}
-
-
 });
 
-app.get('/register', function(request, response) {
+
+app.get('/register', function(request, response) { //register page
   response.render('register', {
     title: 'Register',
     message: 'Register for an account'
@@ -140,17 +151,17 @@ app.get('/register', function(request, response) {
 
 
 
-app.post('/register', function(request,response){
+app.post('/register', function(request,response){ //register functionality
 	var username = request.body.username;
 	var password = request.body.password;
 
-	if(username == '' || password == ''){
+	if(username == '' || password == ''){ //handle blank error
 		response.render('register',{
 			message: 'One of the fields is blank. Try again!'
 		})
 	}
 	else{
-		userDB.find({Username:username}).then(function(results){
+		userDB.find({Username:username}).then(function(results){ //if user name already exists return error
 			if(results.length>0){
 				response.render('register',{
 					title:'Login',
@@ -163,7 +174,7 @@ app.post('/register', function(request,response){
 					if (err) return Error(err);
 				});
 
-				response.render('login',{
+				response.render('login',{ //routes to log in page, if account is created and stored into mongodb
 					title:'Login',
 					message: 'Please enter your login information'
 				});
