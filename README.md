@@ -1,4 +1,4 @@
-# CSCI3230U_Fina
+# CSCI3230U_Final
 TO RUN
 --------------------
 
